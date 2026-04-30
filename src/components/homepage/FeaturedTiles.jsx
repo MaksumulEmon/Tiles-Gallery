@@ -9,7 +9,8 @@ const FeaturedTiles = async () => {
     const tiles = await tilestop.slice(0,4)
 
 
-    // console.log(tiles)
+    console.log(tiles)
+    //  const photos = await FeaturedTiles;
 
     
     return (

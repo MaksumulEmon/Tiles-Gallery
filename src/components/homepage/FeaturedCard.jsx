@@ -1,6 +1,7 @@
 import { Noto } from '@/app/layout';
-import { Avatar, Card, Chip } from '@heroui/react';
+import { Avatar, Button, Card, Chip } from '@heroui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const FeaturedCard = ({ tile }) => {
@@ -25,6 +26,7 @@ const FeaturedCard = ({ tile }) => {
                 <p>{tile.dimensions}</p>
                 <p className={`px-3 py-1 rounded-xl text-white font-semibold ${tile.inStock ? "bg-[#79AE6F] " : "bg-[#AE2448]"}`}>   {tile.inStock ? "Available Stock" : "Out of Stock"}</p>
             </div>
+           <Link href={`/tiles/${tile.id}`}>  <Button variant="tertiary" className="w-full rounded font-bold">View Details</Button></Link>
 
         </Card>
 

@@ -1,6 +1,8 @@
 import React from 'react';
 
-const page = () => {
+const DetailsPage = async ({params}) => {
+    const {id} =  await params;
+    console.log(id)
     return (
         <div>
             Tiles Details....
@@ -8,4 +10,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default DetailsPage ;
