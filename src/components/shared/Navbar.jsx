@@ -95,7 +95,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className=" items-center text-2xl md:text-2xl gap-2 font-bold text-[#171717]">
                     
-                    <p>Tiles Gallery</p>
+                    <p>Tiles  Gallery</p>
                 </div>
 
                 {/* Desktop Menu */}

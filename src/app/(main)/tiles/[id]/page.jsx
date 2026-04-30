@@ -32,7 +32,7 @@ const DetailsPage = async ({ params }) => {
 
 
 
-                    <div className="p-6 space-y-4 mx-20">
+                    <div className="p-6 space-y-4 ">
 
                         <h1 className="text-2xl md:text-4xl font-bold text-gray-800 text-center">
                             {tile.title}
@@ -46,28 +46,27 @@ const DetailsPage = async ({ params }) => {
                             {tile.description}
                         </p>
 
-                        <div className="grid grid-cols-2 gap-4 pt-4">
+                        <div className="flex justify-between ">
 
-                            <div className="bg-gray-100 p-3 rounded-lg flex gap-2">
-                                <p className="text-sm text-gray-500">Price</p>
-                                <p className="font-semibold text-gray-800">{tile.price} $</p>
-
-                            </div>
-                            <div>
+                            <div className="bg-gray-100 p-3 rounded-lg ">
+                            
+                                <p className="font-semibold text-gray-800">Price: {tile.price} $</p>
                                 <p className="font-semibold text-gray-800">Curenct: {tile.currency} </p>
                                 <p className="font-semibold text-gray-800">Material: {tile.material} </p>
+                                <p className='font-semibold text-gray-800'>Sizes:{tile.dimensions}</p>
                             </div>
 
-                            <div className='flex justify-between items-center'>
-                                <p className='font-semibold text-gray-800'>Sizes:{tile.dimensions}</p>
+                            <div className='flex items-center'>
                                 <p className={`px-3 py-1 rounded-xl text-white font-semibold ${tile.inStock ? "bg-[#79AE6F] " : "bg-[#AE2448]"}`}>   {tile.inStock ? "Available Stock" : "Out of Stock"}</p>
                             </div>
 
+
+
                         </div>
 
-                        <button className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl transition">
+                        {/* <Button variant='tertiary' className="mt-4 w-full bg-green-600 hover:bg-green-700  py-3 rounded-xl transition">
                             Buy Now
-                        </button>
+                        </Button> */}
 
                     </div>
                 </div>
