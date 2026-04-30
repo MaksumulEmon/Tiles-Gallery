@@ -1,6 +1,7 @@
 import Banner from "@/components/homepage/Banner";
+import FeaturedTiles from "@/components/homepage/FeaturedTiles";
 import TitleMarque from "@/components/homepage/TitleMarque";
-import { Button } from "@heroui/react";
+
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
     <div>
       <Banner/>
        <TitleMarque/>
+       <FeaturedTiles/>
       
     </div>
 
