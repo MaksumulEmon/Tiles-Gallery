@@ -1,4 +1,4 @@
-import {  Manrope } from "next/font/google";
+import {  Manrope,  Noto_Serif } from "next/font/google";
 import "./globals.css";
 
 
@@ -6,6 +6,14 @@ const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
 });
+
+export const Noto = Noto_Serif({
+  variable: "--font-notoserif",
+  subsets: ["latin"],
+});
+
+
+
 
 export const metadata = {
   title: "Create Next App",

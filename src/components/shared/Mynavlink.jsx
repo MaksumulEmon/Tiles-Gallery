@@ -13,7 +13,7 @@ const Mynavlink = ({href, children, onClick}) => {
     return (
         <Link href={href} 
           onClick={onClick}
-        className={`${isActive ? "border-b-2 border-[#4ED7F1] pb-1" : ""}`}> {children} </Link>
+        className={`${isActive ? "border-b-2 border-[#171717] pb-1" : ""}`}> {children} </Link>
 
     );
 };

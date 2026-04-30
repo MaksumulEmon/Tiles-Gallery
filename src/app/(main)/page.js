@@ -1,13 +1,14 @@
+import Banner from "@/components/homepage/Banner";
+import TitleMarque from "@/components/homepage/TitleMarque";
 import { Button } from "@heroui/react";
 
 
 export default function Home() {
   return (
     <div>
-      <h1>Home page</h1>
-      <Button>
-        My Button
-      </Button>
+      <Banner/>
+       <TitleMarque/>
+      
     </div>
 
 
