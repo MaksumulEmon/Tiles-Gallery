@@ -2,9 +2,15 @@ import React from 'react';
 import FeaturedCard from './FeaturedCard';
 
 const FeaturedTiles = async () => {
-    const res = await fetch("https://tiles-gallery-three.vercel.app/data.json")
-    const tiles = await res.json();
+    const res = await fetch("https://tiles-gallery-three.vercel.app/data.json",{
+        cache:"no-store"
+    })
+    const tilestop = await res.json();
+    const tiles = await tilestop.slice(0,4)
+
+
     // console.log(tiles)
+
     
     return (
         <div className='max-w-7xl mx-auto '>
