@@ -33,7 +33,7 @@ import { useRouter } from "next/navigation";
 
 export default function SignUpPage() {
 
-      const router = useRouter()
+    const router = useRouter()
     const onSubmit = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -51,7 +51,7 @@ export default function SignUpPage() {
 
 
         console.log({ data, error })
-        if(!error) {
+        if (!error) {
             router.push('/login')
         }
 
@@ -128,6 +128,10 @@ export default function SignUpPage() {
                         </Button>
                     </div>
                 </Form>
+
+                <br />
+                <p className="text-center">Or</p>
+                <Button variant="outline" className={"w-full rounded "}> Sign In With Google</Button>
             </Card>
         </div>
 

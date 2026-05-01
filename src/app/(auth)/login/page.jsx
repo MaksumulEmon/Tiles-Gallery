@@ -13,6 +13,7 @@ import {
     TextField,
 } from "@heroui/react";
 import { error } from "better-auth/api";
+import { FcGoogle } from "react-icons/fc";
 
 export default function SignInPage() {
     const onSubmit = async (e) => {
@@ -21,7 +22,7 @@ export default function SignInPage() {
         const password = e.target.password.value;
 
         const { data, error } = await authClient.signIn.email({
-           
+
             email,
             password,
             callbackURL: '/'
@@ -30,6 +31,15 @@ export default function SignInPage() {
         console.log({ data, error })
 
     };
+
+
+    const handleGoogleSignIn = async () => {
+        await authClient.signIn.social({
+            provider: 'google'
+        })
+    }
+
+
 
     return (
         <div className="flex  items-center justify-center p-4">
@@ -40,7 +50,7 @@ export default function SignInPage() {
                 {/* Changed w-96 to w-full and added horizontal padding */}
                 <Form className="flex w-full px-6 flex-col gap-4" onSubmit={onSubmit}>
 
-                  
+
 
                     <TextField
                         isRequired
@@ -93,6 +103,23 @@ export default function SignInPage() {
                         </Button>
                     </div>
                 </Form>
+
+                <div className="relative my-4">
+                    <div className="absolute inset-0 flex items-center"><span className="w-full border-t" /></div>
+                    <div className="relative flex justify-center text-xs uppercase">
+                        <span className="bg-background px-5 py-1 rounded-2xl text-muted-foreground">Or continue with</span>
+                    </div>
+                </div>
+
+                <Button
+                    variant="outline"
+                    onClick={handleGoogleSignIn}
+                    className="w-full flex items-center justify-center gap-2 font-medium rounded"
+                >
+                    <FcGoogle className="h-5 w-5" />
+                    Sign in with Google
+                </Button>
+
             </Card>
         </div>
 
