@@ -114,6 +114,12 @@ const Navbar = () => {
                             Login
                         </button>
                     </Link>
+                    
+                    <Link href="/register" className="hidden md:block">
+                        <button className="bg-[#171717] text-white px-4 py-2 rounded font-semibold">
+                            Register
+                        </button>
+                    </Link>
 
                     {/* Profile Image */}
                     <Image
@@ -145,6 +151,12 @@ const Navbar = () => {
                     <Link href="/login">
                         <button className="mt-2 bg-[#171717] text-white px-4 py-2 rounded font-semibold">
                             Login
+                        </button>
+                    </Link>
+
+                    <Link href="/register">
+                        <button className="mt-2 bg-[#171717] text-white px-4 py-2 rounded font-semibold">
+                           Register
                         </button>
                     </Link>
                 </div>

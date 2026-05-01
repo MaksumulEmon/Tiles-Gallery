@@ -13,13 +13,14 @@ const SearchSection = ({ tiles }) => {
     return (
         <>
 
-            <div className="pt-6 flex justify-center">
-                <SearchField className="w-full max-w-md">
+            <div className="pt-6 ">
+                <SearchField className=" max-w-sm">
 
-                    <SearchField.Group>
+                    <SearchField.Group className="focus-within:ring-1 focus-within:ring-black focus-within:border-black ">
                         <SearchField.SearchIcon />
 
                         <SearchField.Input
+                            className="placeholder:text-black"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             placeholder="Search..."
