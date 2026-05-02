@@ -29,8 +29,10 @@ import {
     TextField,
 } from "@heroui/react";
 import { error } from "better-auth/api";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 
 export default function SignUpPage() {
 
@@ -54,7 +56,7 @@ export default function SignUpPage() {
         console.log({ data, error })
 
         if (error) {
-        toast.error( error.message);
+            toast.error(error.message);
         }
         if (data) {
             toast.success("sign up sucessfull");
@@ -63,11 +65,21 @@ export default function SignUpPage() {
 
     };
 
+
+
+    const handleGoogleSignIn = async () => {
+        await authClient.signIn.social({
+            provider: 'google'
+        })
+    }
     return (
         <div className="flex  items-center justify-center p-4">
-            {/* max-w-md ensures it doesn't get too wide on desktop, w-full ensures it fits mobile */}
+
             <Card className="border w-full max-w-md py-10 shadow-sm">
-                <h1 className="text-center text-2xl font-bold mb-6">Sign Up</h1>
+                <h1 className="text-center text-4xl sm:text-4xl font-extrabold mb-8 tracking-tight bg-linear-to-r from-blue-600 via-indigo-500 to-purple-600 text-transparent bg-clip-text">
+                    Welcome to Tiles Gallery
+                </h1>
+
 
                 {/* Changed w-96 to w-full and added horizontal padding */}
                 <Form className="flex w-full px-6 flex-col gap-4" onSubmit={onSubmit}>
@@ -126,18 +138,47 @@ export default function SignUpPage() {
                     </TextField>
 
                     <div className="flex flex-col sm:flex-row gap-3 mt-2">
-                        <Button type="submit" className="w-full sm:w-auto">
-                            <Check /> Submit
+                        <Button type="submit" className="w-full  rounded">
+                            <Check /> Sign in
                         </Button>
-                        <Button type="reset" variant="secondary" className="w-full sm:w-auto">
-                            Reset
-                        </Button>
+
                     </div>
                 </Form>
 
-                <br />
-                <p className="text-center">Or</p>
-                <Button variant="outline" className={"w-full rounded "}> Sign In With Google</Button>
+                <div className="relative my-4">
+                    <div className="absolute inset-0 flex items-center"><span className="w-full border-t" /></div>
+                    <div className="relative flex justify-center text-xs uppercase">
+                        <span className="bg-background px-5 py-1 rounded-2xl text-muted-foreground">Or continue with</span>
+                    </div>
+                </div>
+
+                <Button
+                    variant="outline"
+                    onClick={handleGoogleSignIn}
+                    className="w-full flex items-center justify-center gap-2 font-medium rounded"
+                >
+                    <FcGoogle className="h-5 w-5" />
+                    Sign in with Google
+                </Button>
+
+
+                <div className="flex items-center justify-between mt-4 text-sm">
+
+                    <p className="text-muted-foreground">
+                        Already have an account?{" "}
+                        <Link href="/login" className="text-blue-500 hover:underline font-medium">
+                            Sign in
+                        </Link>
+                    </p>
+
+                    <p
+                        href="/forgot-password"
+                        className="text-blue-500 hover:underline font-medium"
+                    >
+                        Forgot Password?
+                    </p>
+
+                </div>
             </Card>
         </div>
 

@@ -13,6 +13,7 @@ import {
     TextField,
 } from "@heroui/react";
 import { error } from "better-auth/api";
+import Link from "next/link";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 
@@ -28,7 +29,7 @@ export default function SignInPage() {
             password,
             callbackURL: '/'
         })
-       
+
 
 
         if (error) {
@@ -57,8 +58,9 @@ export default function SignInPage() {
     return (
         <div className="flex  items-center justify-center p-4">
             <Card className="border w-full max-w-md py-10 shadow-sm">
-                <h1 className="text-center text-2xl font-bold mb-6">Sign In</h1>
-
+                <h1 className="text-center text-4xl sm:text-4xl font-extrabold mb-8 tracking-tight bg-linear-to-r from-blue-600 via-indigo-500 to-purple-600 text-transparent bg-clip-text">
+                    Welcome to Tiles Gallery
+                </h1>
 
                 <Form className="flex w-full px-6 flex-col gap-4" onSubmit={onSubmit}>
                     <TextField
@@ -104,12 +106,10 @@ export default function SignInPage() {
                     </TextField>
 
                     <div className="flex flex-col sm:flex-row gap-3 mt-2">
-                        <Button type="submit" className="w-full sm:w-auto">
-                            <Check /> Submit
+                        <Button type="submit" className="w-full  rounded">
+                            <Check /> Sign in
                         </Button>
-                        <Button type="reset" variant="secondary" className="w-full sm:w-auto">
-                            Reset
-                        </Button>
+
                     </div>
                 </Form>
 
@@ -129,6 +129,24 @@ export default function SignInPage() {
                     Sign in with Google
                 </Button>
 
+
+                <div className="flex items-center justify-between mt-4 text-sm">
+
+                    <p className="text-muted-foreground">
+                        Don’t have an account?{" "}
+                        <Link href="/register" className="text-blue-500 hover:underline font-medium">
+                            Register
+                        </Link>
+                    </p>
+
+                    <p
+                        href="/forgot-password"
+                        className="text-blue-500 hover:underline font-medium"
+                    >
+                        Forgot Password?
+                    </p>
+
+                </div>
             </Card>
         </div>
 
