@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧱 Tiles Gallery
 
-## Getting Started
+A modern **Next.js Tiles Gallery web application** with authentication, dynamic search, secure API proxy system, and smooth UI experience.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👉 https://tiles-gallery-three.vercel.app/
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📌 Project Overview
 
-## Learn More
+Tiles Gallery is a  web application where users can:
 
-To learn more about Next.js, take a look at the following resources:
+- Browse tile collections  
+- Search tiles dynamically  
+- View detailed tile information  
+- Login / Signup using email authentication  
+- Get real-time feedback using toast notifications   
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Key Features
 
-## Deploy on Vercel
+- 🔐 Email Authentication (Login / Signup)
+- ⚡ Fast Next.js App Router architecture
+- 🗄️ MongoDB database integration
+- 🔎 Dynamic search functionality
+- 📄 View detailed tile pages
+- 🎠 Swiper image slider
+- 🔔 Toast notifications (react-hot-toast)
+- 🌐 Secure API Proxy system
+- 📱 Fully responsive UI (mobile, tablet, desktop)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧠 Authentication System
+
+- Built with **better-auth**
+- Email-based login & signup
+- MongoDB stores user data securely
+- Session-based authentication
+- Protected routes support
+
+---
+
+## 🔔 Notifications System (react-hot-toast)
+
+Used for real-time feedback:
+
+- ✅ Login successful  
+- ✅ Signup successful  
+- ❌ Error handling  
+- ⏳ Loading states  
+- 📦 API response status  
+
+### Example Usage:
+
+- When user logs in → success toast  
+- When error occurs → error toast  
+- When data loads → loading feedback  
+
+---
+
+
+
+## 🔄 How It Works
+
+Whenever a user performs actions like:
+
+- 🔎 Viewing tile details  
+- 📄 Opening all tiles page  
+- 🔐 Login / Signup  
+- 📦 Fetching single tile data  
+
+### 🚀 Final Words
+
+- Tiles Gallery is a learning + production-ready project showcasing:
+
+- Full-stack Next.js development
+- Authentication system using better-auth
+- MongoDB integration
+- Modern UI/UX design
+- Scalable API structure with proxy layer
+

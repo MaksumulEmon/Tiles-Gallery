@@ -86,7 +86,7 @@ const Banner = () => {
 
         <section className="max-w-7xl mx-auto relative h-[60vh] lg:h-217 w-full overflow-hidden flex items-center px-6 lg:px-16 lg:mt-5 rounded-2xl">
 
-           
+
             <div className="absolute inset-0 z-0">
                 <Swiper
                     pagination={{ clickable: true }}
@@ -127,21 +127,23 @@ const Banner = () => {
                 <div className="absolute inset-0 bg-black/40"></div>
             </div>
 
-           
+
             <div className="relative z-10 max-w-2xl text-white">
-                <h1 className="font-bold text-5xl lg:text-7xl mb-6 drop-shadow-md">
+
+                <h1 className="font-bold text-3xl sm:text-4xl lg:text-7xl mb-6 drop-shadow-md">
                     Discover Your Perfect Aesthetic
                 </h1>
 
-                <p className="text-lg lg:text-xl mb-10 text-white max-w-lg leading-relaxed">
+                <p className="text-sm sm:text-base lg:text-xl mb-10 text-white max-w-lg leading-relaxed">
                     Curated architectural surfaces for the modern visionary. Explore our gallery of premium porcelain, marble, and handcrafted ceramics.
                 </p>
 
                 <Link href={'/alltiles'}>
-                    <button className="bg-white text-black px-10 py-5 font-bold text-sm tracking-[0.2em] uppercase rounded-2xl cursor-pointer hover:bg-neutral-400 transition-colors duration-300">
+                    <button className="bg-white text-black px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 font-bold text-xs sm:text-sm tracking-[0.2em] uppercase rounded-2xl cursor-pointer hover:bg-neutral-400 transition-colors duration-300">
                         Browse Now
                     </button>
                 </Link>
+
             </div>
 
         </section>

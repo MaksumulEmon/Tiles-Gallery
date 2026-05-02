@@ -3,31 +3,35 @@ import React from 'react';
 
 const NotFound = () => {
     return (
-         <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-[#244D3F] via-[#64748B] to-[#1F2937] text-white px-4">
+        <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a] text-white px-4">
 
-            <div className="text-center">
+            <div className="absolute inset-0  from-zinc-900/50 via-black to-black pointer-events-none" />
 
-                {/* 404 Text */}
-                <h1 className="text-8xl md:text-9xl font-extrabold mb-4 drop-shadow-lg">
+            <div className="text-center relative z-10">
+
+   
+                <h1 className="text-[12rem] md:text-[16rem] font-light leading-none tracking-tighter text-zinc-800/40 select-none">
                     404
                 </h1>
 
-                {/* Message */}
-                <h2 className="text-2xl md:text-3xl font-semibold mb-3">
-                    Oops! Page Not Found
-                </h2>
+                <div className="-mt-12 md:-mt-20">
+                    <h2 className="text-xl md:text-2xl font-light tracking-[0.2em] uppercase mb-4">
+                        Page Not Found
+                    </h2>
 
-                <p className="text-white/80 mb-6 max-w-md mx-auto">
-                    The page you are looking for doesn’t exist or has been moved.
-                </p>
+                    <p className="text-zinc-500 mb-10 max-w-sm mx-auto text-sm leading-relaxed tracking-wide">
+                        The requested resource is unavailable or has been permanently moved from the studio directory.
+                    </p>
 
-                {/* Button */}
-                <Link href="/">
-                    <button className="px-6 py-3 bg-white text-[#1F2937] font-semibold rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                        Go Home
-                    </button>
-                </Link>
-
+                    <Link href="/">
+                        <button className="group relative px-10 py-4 overflow-hidden border border-zinc-800 rounded-full transition-all hover:border-white">
+                            <span className="relative z-10 text-xs uppercase tracking-[0.3em] group-hover:text-black transition-colors duration-300">
+                                Return to Studio
+                            </span>
+                            <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                        </button>
+                    </Link>
+                </div>
             </div>
         </div>
     );
