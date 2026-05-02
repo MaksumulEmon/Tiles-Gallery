@@ -4,7 +4,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import logo from "@/assets/logo.jpg";
 import Mynavlink from "./Mynavlink";
 import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
