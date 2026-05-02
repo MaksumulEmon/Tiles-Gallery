@@ -64,9 +64,9 @@ const DetailsPage = async ({ params }) => {
 
                         </div>
 
-                        {/* <Button variant='tertiary' className="mt-4 w-full bg-green-600 hover:bg-green-700  py-3 rounded-xl transition">
+                        <Button variant='tertiary' className="mt-4 w-full bg-black  text-white hover:bg-gray-300 hover:text-black py-3 rounded-xl transition">
                             Buy Now
-                        </Button> */}
+                        </Button>
 
                     </div>
                 </div>

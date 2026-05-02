@@ -16,24 +16,26 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     const userData = authClient.useSession()
     const user = userData.data?.user
- 
+
 
 
     const handlelogout = async () => {
         await authClient.signOut();
         toast.success("Log out")
-   
+
     }
 
 
 
     return (
-        <div className="bg-[#FAFAF9] relative border-2 border-b border-[#E7E5E4]">
+        <div className="bg-[#FAFAF9]/90 backdrop-blur-md sticky top-0 z-2500 border-b border-[#E7E5E4] py-3">
             <div className="mx-6 md:mx-20 flex justify-between items-center py-3">
 
                 {/* Logo */}
-                <div className=" items-center text-2xl md:text-2xl gap-2 font-bold text-[#171717]">
-                    <p>Tiles  Gallery</p>
+                <div className="flex items-center text-2xl md:text-2xl gap-2 font-bold text-[#171717]">
+                    <Link href="/">
+                        Tiles Gallery
+                    </Link>
                 </div>
 
                 {/* Desktop Menu */}
@@ -58,7 +60,7 @@ const Navbar = () => {
                     /> */}
 
 
-                    {/* Login button (DESKTOP ONLY) */}
+                    {/* Login button lg:deivce */}
                     {!user && <div className="flex justify-between gap-3">
                         <Link href="/login" className="hidden md:block">
                             <button className="bg-[#171717] text-white px-4 py-2 rounded font-semibold">
@@ -86,7 +88,7 @@ const Navbar = () => {
                         </div>
                     }
 
-                    {/* Hamburger (MOBILE ONLY) */}
+                    {/* Ham burger Mobile */}
                     <button
                         className="md:hidden text-3xl"
                         onClick={() => setOpen(!open)}
@@ -103,26 +105,25 @@ const Navbar = () => {
                     <Mynavlink href="/alltiles" onClick={() => setOpen(false)}>All Tiles</Mynavlink>
                     <Mynavlink href="/myprofile" onClick={() => setOpen(false)}>My Profile</Mynavlink>
 
-                    {/* Login button (MOBILE ONLY) */}
 
-
+                    {/* Login button mobile */}
                     {!user && <div className="flex justify-between">
-                   
-                            <Link href="/login">
-                                <button className="mt-2 bg-[#171717] text-white px-4 py-2 rounded font-semibold">
-                                    Login
-                                </button>
-                            </Link>
-                       
+
+                        <Link href="/login">
+                            <button className="mt-2 bg-[#171717] text-white px-4 py-2 rounded font-semibold">
+                                Login
+                            </button>
+                        </Link>
 
 
-                    
-                            <Link href="/register">
-                                <button className="mt-2 bg-[#171717] text-white px-4 py-2 rounded font-semibold">
-                                    Register
-                                </button>
-                            </Link>
-                       
+
+
+                        <Link href="/register">
+                            <button className="mt-2 bg-[#171717] text-white px-4 py-2 rounded font-semibold">
+                                Register
+                            </button>
+                        </Link>
+
 
                     </div>
                     }
