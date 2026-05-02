@@ -23,7 +23,7 @@ const Banner = () => {
         <section className="max-w-7xl mx-auto relative h-[60vh] lg:h-217 w-full overflow-hidden flex items-center px-6 lg:px-16 lg:mt-5 rounded-2xl">
 
 
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 bg-black/90">
                 <Swiper
                     pagination={{ clickable: true }}
                     modules={[Pagination]}

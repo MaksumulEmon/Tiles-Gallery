@@ -14,8 +14,10 @@ import {
 } from "@heroui/react";
 import { error } from "better-auth/api";
 import Link from "next/link";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
+
 
 export default function SignInPage() {
     const onSubmit = async (e) => {
@@ -41,13 +43,12 @@ export default function SignInPage() {
         // }
 
 
-
-
         if (error) {
             toast.error(error.message);
-        } else {
-            toast.success(` Login successful!`);
+            return;
         }
+
+        toast.success("Login successful!");
 
         console.log({ data, error })
 
@@ -60,6 +61,8 @@ export default function SignInPage() {
         })
     }
 
+
+    const [showPassword, setShowPassword] = useState(false);
 
 
     return (
@@ -142,7 +145,7 @@ export default function SignInPage() {
                     <p className="text-muted-foreground">
                         Don’t have an account?{" "}
                         <Link href="/register" className="text-blue-500 hover:underline font-medium">
-                            Register
+                            Sign up
                         </Link>
                     </p>
 

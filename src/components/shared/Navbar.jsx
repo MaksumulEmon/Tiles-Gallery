@@ -78,10 +78,18 @@ const Navbar = () => {
 
                     {
                         user && <div className="flex  gap-3 justify-between">
+
+                            <div className="hidden md:flex md:flex-col gap-0.5">
+                                <p className="text-xs font-medium text-gray-600 uppercase tracking-wider">Hello..</p>
+                                <h2 className="text-xl font-bold text-gray-900 leading-tight">{user.name}</h2>
+                            </div>
+
                             <Avatar>
                                 <Avatar.Image alt="John Doe" src={user?.image} referrerPolicy="no-referrer" />
                                 <Avatar.Fallback>{user.name.charAt(0)}</Avatar.Fallback>
                             </Avatar>
+
+
 
                             <Button onClick={handlelogout} variant="danger" className="text-white rounded font-medium   text-lg">Log out</Button>
                         </div>

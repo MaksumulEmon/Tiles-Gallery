@@ -139,7 +139,7 @@ export default function SignUpPage() {
 
                     <div className="flex flex-col sm:flex-row gap-3 mt-2">
                         <Button type="submit" className="w-full  rounded">
-                            <Check /> Sign in
+                            <Check /> Sign up
                         </Button>
 
                     </div>
