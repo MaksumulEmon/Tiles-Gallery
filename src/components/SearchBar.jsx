@@ -23,7 +23,7 @@ const SearchSection = ({ tiles }) => {
                             className="placeholder:text-black"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            placeholder="Search..."
+                            placeholder="Search......"
                         />
 
                         <SearchField.ClearButton onClick={() => setSearch("")} />

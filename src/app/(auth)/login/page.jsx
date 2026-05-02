@@ -30,13 +30,22 @@ export default function SignInPage() {
         })
 
 
+        // if (error) {
+        //     toast.error(error.message);
+        //     return;
+        // }
+
+
+        // if (data) {
+        //     toast.success(` Login successful!`);
+        // }
+
+
+
+
         if (error) {
             toast.error(error.message);
-            return;
-        }
-
-
-        if (data) {
+        } else {
             toast.success(` Login successful!`);
         }
 

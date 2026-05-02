@@ -10,18 +10,19 @@ import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-
     const userData = authClient.useSession()
-    // console.log(userData);
     const user = userData.data?.user
-    // console.log(user)
+ 
 
 
     const handlelogout = async () => {
         await authClient.signOut();
+        toast.success("Log out")
+   
     }
 
 
