@@ -1,5 +1,6 @@
 import {  Manrope,  Noto_Serif } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 
 const manrope = Manrope({
@@ -27,7 +28,7 @@ export default function RootLayout({ children }) {
       data-theme="light"
       className={` h-full antialiased`}
     >
-      <body className={` ${manrope.className} min-h-full flex flex-col`}>{children}</body>
+      <body className={` ${manrope.className} min-h-full flex flex-col`}>{children}    <Toaster /> </body>
     </html>
   );
 }

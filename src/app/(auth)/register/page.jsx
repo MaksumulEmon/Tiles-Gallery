@@ -30,6 +30,7 @@ import {
 } from "@heroui/react";
 import { error } from "better-auth/api";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function SignUpPage() {
 
@@ -51,9 +52,14 @@ export default function SignUpPage() {
 
 
         console.log({ data, error })
-        if (!error) {
-            router.push('/login')
+
+        if (error) {
+        toast.error( error.message);
         }
+        if (data) {
+            toast.success("sign up sucessfull");
+        }
+
 
     };
 

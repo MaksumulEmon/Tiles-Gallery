@@ -13,6 +13,7 @@ import {
     TextField,
 } from "@heroui/react";
 import { error } from "better-auth/api";
+import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 
 export default function SignInPage() {
@@ -27,6 +28,18 @@ export default function SignInPage() {
             password,
             callbackURL: '/'
         })
+       
+
+
+        if (error) {
+            toast.error(error.message);
+            return;
+        }
+
+
+        if (data) {
+            toast.success(` Login successful!`);
+        }
 
         console.log({ data, error })
 
@@ -43,15 +56,11 @@ export default function SignInPage() {
 
     return (
         <div className="flex  items-center justify-center p-4">
-            {/* max-w-md ensures it doesn't get too wide on desktop, w-full ensures it fits mobile */}
             <Card className="border w-full max-w-md py-10 shadow-sm">
                 <h1 className="text-center text-2xl font-bold mb-6">Sign In</h1>
 
-                {/* Changed w-96 to w-full and added horizontal padding */}
+
                 <Form className="flex w-full px-6 flex-col gap-4" onSubmit={onSubmit}>
-
-
-
                     <TextField
                         isRequired
                         name="email"
