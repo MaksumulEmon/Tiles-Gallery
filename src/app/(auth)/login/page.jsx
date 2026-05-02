@@ -24,12 +24,10 @@ export default function SignInPage() {
         const password = e.target.password.value;
 
         const { data, error } = await authClient.signIn.email({
-
             email,
             password,
             callbackURL: '/'
         })
-
 
 
         if (error) {
