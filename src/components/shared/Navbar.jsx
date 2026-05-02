@@ -84,9 +84,23 @@ import logo from "@/assets/logo.jpg";
 import Mynavlink from "./Mynavlink";
 import { RxCross2 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+
+    const userData = authClient.useSession()
+    // console.log(userData);
+    const user = userData.data?.user
+    // console.log(user)
+
+
+    const handlelogout = async () => {
+        await authClient.signOut();
+    }
+
+
 
     return (
         <div className="bg-[#FAFAF9] relative border-2 border-b border-[#E7E5E4]">
@@ -94,7 +108,6 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <div className=" items-center text-2xl md:text-2xl gap-2 font-bold text-[#171717]">
-                    
                     <p>Tiles  Gallery</p>
                 </div>
 
@@ -108,27 +121,45 @@ const Navbar = () => {
                 {/* Right Side */}
                 <div className="flex items-center gap-3">
 
-                    {/* Login button (DESKTOP ONLY) */}
-                    <Link href="/login" className="hidden md:block">
-                        <button className="bg-[#171717] text-white px-4 py-2 rounded font-semibold">
-                            Login
-                        </button>
-                    </Link>
-                    
-                    <Link href="/register" className="hidden md:block">
-                        <button className="bg-[#171717] text-white px-4 py-2 rounded font-semibold">
-                            Register
-                        </button>
-                    </Link>
+
 
                     {/* Profile Image */}
-                    <Image
+                    {/* <Image
                         src={logo}
                         alt="logo"
                         width={40}
                         height={40}
                         className="rounded-full"
-                    />
+                    /> */}
+
+
+                    {/* Login button (DESKTOP ONLY) */}
+                    {!user && <div className="flex justify-between gap-3">
+                        <Link href="/login" className="hidden md:block">
+                            <button className="bg-[#171717] text-white px-4 py-2 rounded font-semibold">
+                                Login
+                            </button>
+                        </Link>
+
+                        <Link href="/register" className="hidden md:block">
+                            <button className="bg-[#171717] text-white px-4 py-2 rounded font-semibold">
+                                Register
+                            </button>
+                        </Link>
+                    </div>}
+
+
+
+                    {
+                        user && <div className="flex  gap-3 justify-between">
+                            <Avatar>
+                                <Avatar.Image alt="John Doe" src={user?.image} referrerPolicy="no-referrer" />
+                                <Avatar.Fallback>{user.name.charAt(0)}</Avatar.Fallback>
+                            </Avatar>
+
+                            <Button onClick={handlelogout} variant="danger" className="text-white rounded font-medium   text-lg">Log out</Button>
+                        </div>
+                    }
 
                     {/* Hamburger (MOBILE ONLY) */}
                     <button
@@ -148,17 +179,29 @@ const Navbar = () => {
                     <Mynavlink href="/myprofile" onClick={() => setOpen(false)}>My Profile</Mynavlink>
 
                     {/* Login button (MOBILE ONLY) */}
-                    <Link href="/login">
-                        <button className="mt-2 bg-[#171717] text-white px-4 py-2 rounded font-semibold">
-                            Login
-                        </button>
-                    </Link>
 
-                    <Link href="/register">
-                        <button className="mt-2 bg-[#171717] text-white px-4 py-2 rounded font-semibold">
-                           Register
-                        </button>
-                    </Link>
+
+                    {!user && <div className="flex justify-between">
+                   
+                            <Link href="/login">
+                                <button className="mt-2 bg-[#171717] text-white px-4 py-2 rounded font-semibold">
+                                    Login
+                                </button>
+                            </Link>
+                       
+
+
+                    
+                            <Link href="/register">
+                                <button className="mt-2 bg-[#171717] text-white px-4 py-2 rounded font-semibold">
+                                    Register
+                                </button>
+                            </Link>
+                       
+
+                    </div>
+                    }
+
                 </div>
             )}
         </div>
