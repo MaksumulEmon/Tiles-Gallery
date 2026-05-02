@@ -34,15 +34,10 @@ export function UpdateUserModal() {
                         <Modal.Header>
                             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
 
-
-
                                 <Avatar>
                                     <Avatar.Image alt="John Doe" src={user?.image} referrerPolicy="no-referrer" />
                                     <Avatar.Fallback>{user?.name?.charAt(0)}</Avatar.Fallback>
                                 </Avatar>
-
-
-
 
 
                             </Modal.Icon>

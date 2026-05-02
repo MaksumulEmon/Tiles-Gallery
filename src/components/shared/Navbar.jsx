@@ -20,7 +20,7 @@ const Navbar = () => {
 
     const handlelogout = async () => {
         await authClient.signOut();
-        toast.success("Log out")
+        toast.error("Log out")
 
     }
 
